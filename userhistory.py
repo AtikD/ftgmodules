@@ -25,12 +25,12 @@ class UserHistoryMod(loader.Module):
 				await message.client.forward_messages('sangmatainfo_bot' ,idd,message.to_id)
 				response = await response
 				if response.message.text =='Forward any message to this chat to see user history.':
-					await message.edit('Настройки конфидитиальности пользователя не позволяют узнать историю.')
+					await message.edit('Настройки конфиденциальности пользователя не позволяют узнать историю.')
 					return
 				response2 = await response2
 				await message.client.send_message(message.to_id,f'<b>{response.message.text}</b>',reply_to=reply.id)
 				await message.client.send_message(message.to_id,f'<b>{response2.message.text}</b>',reply_to=reply.id)
 				await message.delete()
 			except YouBlockedUserError:
-				await message.edit('<code>Разблокируй </code> @voicybot')
+				await message.edit('<code>Разблокируй </code> @SangMataInfo_bot')
 				return
