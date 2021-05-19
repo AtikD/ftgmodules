@@ -28,9 +28,9 @@ class VoteKickMod(loader.Module):
 			quiz=False
 			)
 		))
-		await sleep(5)
-		await a.reply("Осталось 5 секунд")
-		await sleep(5)
+		await sleep(60)
+		await a.reply("Осталось 60 секунд")
+		await sleep(60)
 		msgs=[_ async for _ in message.client.iter_messages(message.to_id,ids=a.id)]
 		await a.delete()
 		if msgs[0].media.results.total_voters==0:
