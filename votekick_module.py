@@ -4,6 +4,7 @@ from telethon import functions, types
 from asyncio import sleep
 from telethon.errors import ChatAdminRequiredError
 from telethon.tl.functions.channels import EditBannedRequest
+from telethon.tl.types import ChatBannedRights
 @loader.tds
 class VoteKickMod(loader.Module):
 	"""Vote for Kick or Ban"""
