@@ -41,9 +41,9 @@ class VoteKickMod(loader.Module):
 				await message.client.kick_participant(message.chat_id, user.id)
 			except:
 				return await message.reply("Админки нема")
-			return await message.reply("Пользователя выкинули из чата")
+			return await message.reply(f"Голосование за кик\n{user.first_name} был выгнан из чата")
 		else:
-			return await message.reply("Пользователь остался в чате")
+			return await message.reply(f"Голосование за кик\n{user.first_name} остался в чате")
 		
 	async def votebancmd(self, message):
 		if  message.is_private:
@@ -57,7 +57,7 @@ class VoteKickMod(loader.Module):
 		a=await message.client.send_file(message.to_id, types.InputMediaPoll(
 			poll=types.Poll(
 			id=1488228,
-			question=f'Голосование за кик {user.first_name}',
+			question=f'Голосование за бан {user.first_name}',
 			answers=[
 				types.PollAnswer('Выкинуть', b'1'),
 				types.PollAnswer('Оставить', b'2')
@@ -77,6 +77,6 @@ class VoteKickMod(loader.Module):
 				await message.client(EditBannedRequest(message.chat_id, user.id, ChatBannedRights(until_date=None, view_messages=True)))
 			except:
 				return await message.reply("Админки нема")
-			return await message.reply("Пользователь забанен в чате")
+			return await message.reply(f"Голосование за бан\n{user.first_name} был забанен в чате")
 		else:
-			return await message.reply("Пользователь остался в чате")
+			return await message.reply(f"Голосование за бан\n{user.first_name} остался в чате")
